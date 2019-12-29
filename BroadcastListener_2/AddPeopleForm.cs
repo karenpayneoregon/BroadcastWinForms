@@ -87,9 +87,18 @@ namespace BroadcastListener_2
             }
 
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="person"></param>
+        /// <param name="form"></param>
         public void OnListen(Person person, Form form)
         {
+            if (form is Form1)
+            {
+                FirstNameTextBox.Text = person.FirstName;
+                LastNameTextBox.Text = person.LastName;
+            }
         }
 
         private void DoneButton_Click(object sender, EventArgs e)

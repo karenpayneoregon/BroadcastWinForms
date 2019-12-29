@@ -33,15 +33,19 @@ namespace BroadcastListener_2
 
         public void OnListen(Person person, Form form)
         {
-            if (_personsList.FirstOrDefault(p => p.FirstName == person.FirstName && p.LastName == person.LastName) == null)
+            if (form is AddPeopleForm)
             {
-                ((List<Person>)_bindingSource.DataSource).Add(person);
-                _bindingSource.ResetBindings(false);
+                if (_personsList.FirstOrDefault(p => p.FirstName == person.FirstName && p.LastName == person.LastName) == null)
+                {
+                    ((List<Person>)_bindingSource.DataSource).Add(person);
+                    _bindingSource.ResetBindings(false);
+                }
+                else
+                {
+                    MessageBox.Show($"'{person}' already exists");
+                }
             }
-            else
-            {
-                MessageBox.Show("Dup");
-            }
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -54,6 +58,14 @@ namespace BroadcastListener_2
         private void AddPeopleButton_Click(object sender, EventArgs e)
         {
             var form = new AddPeopleForm();
+
+            Broadcaster().Broadcast(new Person()
+            {
+                FirstName = "Jane",
+                LastName = "Adams",
+                Id = -1
+            }, this);
+
             form.ShowDialog();
         }
     }

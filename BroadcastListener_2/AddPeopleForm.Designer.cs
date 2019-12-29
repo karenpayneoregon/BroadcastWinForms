@@ -56,6 +56,7 @@
             // 
             // DoneButton
             // 
+            this.DoneButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.DoneButton.Location = new System.Drawing.Point(116, 97);
             this.DoneButton.Name = "DoneButton";
             this.DoneButton.Size = new System.Drawing.Size(75, 23);
@@ -95,7 +96,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(228, 150);
+            this.CancelButton = this.DoneButton;
+            this.ClientSize = new System.Drawing.Size(212, 150);
             this.Controls.Add(this.DoneButton);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.LastNameTextBox);
