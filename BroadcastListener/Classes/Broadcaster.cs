@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BroadcastListener.Interfaces;
 
@@ -12,7 +7,8 @@ namespace BroadcastListener.Classes
 {
     public class Broadcaster
     {
-        private readonly Collection<IMessageListener1> _listeners = new Collection<IMessageListener1>(); 
+        private readonly Collection<IMessageListener1> _listeners = 
+            new Collection<IMessageListener1>(); 
 
         /// <summary>
         /// Send message
