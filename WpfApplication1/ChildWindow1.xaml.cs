@@ -38,21 +38,16 @@ namespace WpfApplication1
             }
 
         }
-        bool _shown;
+
+        private bool _shown;
 
         protected override void OnContentRendered(EventArgs e)
         {
             base.OnContentRendered(e);
 
-            if (_shown)
-            {
-                return;
-            }
-
             _shown = true;
 
             Top += 200;
-            // Your code here.
         }
 
         private void BroadCast_Click(object sender, RoutedEventArgs e)
