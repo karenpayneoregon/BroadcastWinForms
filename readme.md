@@ -11,4 +11,4 @@ There are two projects
 ---
 
 
-Technet article location TBA
+[Technet article location](https://social.technet.microsoft.com/wiki/contents/articles/53527.winforms-communicate-between-forms-c.aspx)
