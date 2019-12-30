@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BroadcastListener.Interfaces;
 using static BroadcastListener.Classes.Factory;
@@ -27,14 +22,14 @@ namespace BroadcastListener
         /// <summary>
         /// Listener here only reacts to Form2 messages
         /// </summary>
-        /// <param name="Message">Incoming message</param>
+        /// <param name="message">Incoming message</param>
         /// <param name="sender">Calling form</param>
-        public void OnListen(string Message, Form sender)
+        public void OnListen(string message, Form sender)
         {
 
             if (sender is Form2)
             {
-                FromForm2TextBox.Text = Message;
+                FromForm2TextBox.Text = message;
             }
 
         }
