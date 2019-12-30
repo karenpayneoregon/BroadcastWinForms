@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project examples", "Project examples", "{34B37C66-24F3-4A08-96D1-A918CBB0AD04}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WinForms Project examples", "WinForms Project examples", "{34B37C66-24F3-4A08-96D1-A918CBB0AD04}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BroadcastListener_1", "BroadcastListener\BroadcastListener_1.csproj", "{3F98AF69-ABEE-48F0-BB14-FCC61FF8C57C}"
 EndProject
@@ -21,6 +21,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Visual Basic", "Visual Basic", "{7F028FEB-B01E-431F-BBB7-2FE9F1BD7878}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ClassExample1", "ClassExample1\ClassExample1.vbproj", "{5EECABC4-BDC3-42DA-B4DF-41B7B8B67BE0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WPF Project examples", "WPF Project examples", "{829EF633-E857-4319-8506-3D4F893F0E01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApplication1", "WpfApplication1\WpfApplication1.csproj", "{7357C032-AA9F-4BD1-963A-6DEFFCCFC08A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,6 +48,10 @@ Global
 		{5EECABC4-BDC3-42DA-B4DF-41B7B8B67BE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EECABC4-BDC3-42DA-B4DF-41B7B8B67BE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EECABC4-BDC3-42DA-B4DF-41B7B8B67BE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7357C032-AA9F-4BD1-963A-6DEFFCCFC08A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7357C032-AA9F-4BD1-963A-6DEFFCCFC08A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7357C032-AA9F-4BD1-963A-6DEFFCCFC08A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7357C032-AA9F-4BD1-963A-6DEFFCCFC08A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,6 +62,7 @@ Global
 		{0677385E-F55E-4E1D-A92A-C21B49A23DCD} = {34B37C66-24F3-4A08-96D1-A918CBB0AD04}
 		{E9E8CB8A-BB63-4BEC-B2B5-19F37B425638} = {0677385E-F55E-4E1D-A92A-C21B49A23DCD}
 		{5EECABC4-BDC3-42DA-B4DF-41B7B8B67BE0} = {7F028FEB-B01E-431F-BBB7-2FE9F1BD7878}
+		{7357C032-AA9F-4BD1-963A-6DEFFCCFC08A} = {829EF633-E857-4319-8506-3D4F893F0E01}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2F994E79-0D04-4B44-8189-5B21B536B710}
