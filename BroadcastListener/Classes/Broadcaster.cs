@@ -24,7 +24,14 @@ namespace BroadcastListener.Classes
                 listener.OnListen(message, sender);
             }
         }
-       
+        [DebuggerStepThrough()]
+        public void Broadcast(int value, Form sender)
+        {
+            foreach (IMessageListener1 listener in _listeners)
+            {
+                listener.OnListen(value, sender);
+            }
+        }
         /// <summary>
         /// Add a Listener to the Collection of Listeners
         /// </summary>

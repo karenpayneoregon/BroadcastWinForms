@@ -25,15 +25,21 @@ namespace BroadcastListener
         /// <summary>
         /// Listener here only reacts to Form1 messages
         /// </summary>
-        /// <param name="Message">Incoming message</param>
+        /// <param name="message">Incoming message</param>
         /// <param name="sender">Calling form</param>
-        public void OnListen(string Message, Form sender)
+        public void OnListen(string message, Form sender)
         {
             if (sender is Form1)
             {
-                StringFromForm1TextBox.Text = Message;
+                StringFromForm1TextBox.Text = message;
             }
         }
+
+        public void OnListen(int value, Form form)
+        {
+            pictureBox1.Visible = value > 10;
+        }
+
         private void SendToForm1TextBox_Click(object sender, EventArgs e)
         {
             Broadcaster().Broadcast($"{StringToForm1TextBox.Text} - {DateTime.Now.ToShortTimeString()}", this);

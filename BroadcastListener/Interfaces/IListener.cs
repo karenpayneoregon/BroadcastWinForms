@@ -5,6 +5,7 @@ namespace BroadcastListener.Interfaces
 {
     public interface IMessageListener1 
     {
-        void OnListen(string Message, Form Type);
+        void OnListen(string message, Form Type);
+        void OnListen(int value, Form Type);
     }
 }

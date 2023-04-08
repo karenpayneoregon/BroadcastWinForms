@@ -33,6 +33,12 @@ namespace BroadcastListener
             }
 
         }
+
+        public void OnListen(int value, Form form)
+        {
+            // not needed
+        }
+
         /// <summary>
         /// Send simple text message to all listeners
         /// </summary>
@@ -96,5 +102,9 @@ namespace BroadcastListener
             }
         }
 
+        private void IntButton_Click(object sender, EventArgs e)
+        {
+            Broadcaster().Broadcast((int)numericUpDown1.Value, this);
+        }
     }
 }
