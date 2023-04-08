@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using BroadcastListener.Interfaces;
 using static BroadcastListener.Classes.Factory;
@@ -36,7 +37,10 @@ namespace BroadcastListener
 
         public void OnListen(int value, Form form)
         {
-            // not needed
+            if (form is Form1)
+            {
+                pictureBox1.Visible = value > 10;
+            }
         }
 
         /// <summary>
