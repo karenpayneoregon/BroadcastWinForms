@@ -1,8 +1,5 @@
 using BroadcastCoreApp.Classes;
-using System.ComponentModel;
-using System.Diagnostics.CodeAnalysis;
 using WinFormLibrary.Interfaces;
-using static WinFormLibrary.Classes.Factory;
 
 namespace BroadcastCoreApp;
 
@@ -15,12 +12,13 @@ public partial class Form1 : Form, IMessageListener1
 
         Closing += Form1_Closing!;
         Move += Form1_Move;
-        Broadcaster().AddListener(this);
+        Dispatcher().AddListener(this);
 
     }
     
     public void OnListen(string message, Form form)
     {
+        
         switch (message)
         {
             case "clear":
@@ -30,6 +28,7 @@ public partial class Form1 : Form, IMessageListener1
                 // select current month
                 listBox1.SelectedIndex = listBox1.FindString(
                     DateTime.Now.ToString("MMMM"));
+                Debug.WriteLine($"Finished from {form.Text}");
                 break;
             default:
                 listBox1.Items.Add(message);
@@ -54,7 +53,7 @@ public partial class Form1 : Form, IMessageListener1
 
     private void BogusButton_Click(object sender, EventArgs e)
     {
-        Broadcaster()
+        Dispatcher()
             .Broadcast(BogusOperations.People()
                 .FirstOrDefault()!, this);
         
@@ -62,13 +61,13 @@ public partial class Form1 : Form, IMessageListener1
 
     private void numericUpDown1_ValueChanged(object sender, EventArgs e)
     {
-        Broadcaster()
+        Dispatcher()
             .Broadcast((int)numericUpDown1.Value, this);
     }
 
     private void Form1_Closing(object sender, CancelEventArgs e)
     {
-        Broadcaster().RemoveListener(this);
+        Dispatcher().RemoveListener(this);
         
     }
 
@@ -93,7 +92,7 @@ public partial class Form1 : Form, IMessageListener1
 
         childForm2.Show();
     }
-    private void Form1_Move(object? sender, EventArgs e)
+    private void Form1_Move(object sender, EventArgs e)
     {
         var childForms = Application.OpenForms.Cast<Form>()
             .Where(form => form.Name == nameof(Form2));

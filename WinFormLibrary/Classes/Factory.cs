@@ -1,11 +1,12 @@
-﻿namespace WinFormLibrary.Classes;
+﻿#pragma warning disable CS8618
+namespace WinFormLibrary.Classes;
 
 public static class Factory
 {
-    private static Broadcaster _broadcaster;
+    private static Dispatcher _dispatcher;
 
-    public static Broadcaster Broadcaster()
+    public static Dispatcher Dispatcher()
     {
-        return _broadcaster ??= new Broadcaster();
+        return _dispatcher ??= new Dispatcher();
     }
 }

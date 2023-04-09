@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-using WinFormLibrary.Interfaces;
-using static WinFormLibrary.Classes.Factory;
+﻿using WinFormLibrary.Interfaces;
 using System.Globalization;
 using BroadcastCoreApp.Models;
 
@@ -11,12 +9,12 @@ public partial class Form2 : Form, IMessageListener1
     {
         InitializeComponent();
         Closing += Form1_Closing!;
-        Broadcaster().AddListener(this);
+        Dispatcher().AddListener(this);
     }
 
     private void Form1_Closing(object sender, CancelEventArgs e)
     {
-        Broadcaster().RemoveListener(this);
+        Dispatcher().RemoveListener(this);
 
     }
     public void OnListen(string message, Form form)
@@ -29,7 +27,8 @@ public partial class Form2 : Form, IMessageListener1
         if (form is Form1)
         {
             pictureBox1.Image = value > 10 ? 
-                Properties.Resources.red : Properties.Resources.green;
+                Properties.Resources.red : 
+                Properties.Resources.green;
         }
     }
 
@@ -47,14 +46,14 @@ public partial class Form2 : Form, IMessageListener1
 
     private void SendToMainFormButton_Click(object sender, EventArgs e)
     {
-        Broadcaster().Broadcast("clear", this);
+        Dispatcher().Broadcast("clear", this);
         var months = DateTimeFormatInfo.CurrentInfo.MonthNames[..^1].ToList();
 
         foreach (var month in months)
         {
-            Broadcaster().Broadcast(month, this);
+            Dispatcher().Broadcast(month, this);
         }
 
-        Broadcaster().Broadcast("done", this);
+        Dispatcher().Broadcast("done", this);
     }
 }

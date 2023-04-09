@@ -4,7 +4,7 @@ using WinFormLibrary.Interfaces;
 
 namespace WinFormLibrary.Classes;
 
-public class Broadcaster
+public class Dispatcher
 {
     private readonly Collection<IMessageListener1> _listeners = new();
 
