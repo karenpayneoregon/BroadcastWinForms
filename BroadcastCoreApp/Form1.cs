@@ -21,27 +21,29 @@ public partial class Form1 : Form, IMessageListener1
     
     public void OnListen(string message, Form form)
     {
-        if (message == "clear")
+        switch (message)
         {
-            listBox1.Items.Clear();
+            case "clear":
+                listBox1.Items.Clear();
+                break;
+            case "done":
+                // select current month
+                listBox1.SelectedIndex = listBox1.FindString(
+                    DateTime.Now.ToString("MMMM"));
+                break;
+            default:
+                listBox1.Items.Add(message);
+                break;
         }
-        else if (message == "done")
-        {
-            // select current month
-            listBox1.SelectedIndex = listBox1.FindString(DateTime.Now.ToString("MMMM"));
-        }
-        else
-        {
-            listBox1.Items.Add(message);
-        }
-
     }
 
     public void OnListen(int value, Form form)
     {
         if (form is Form1)
         {
-            pictureBox1.Image = value > 10 ? Properties.Resources.red : Properties.Resources.green;
+            pictureBox1.Image = value > 10 ? 
+                Properties.Resources.red : 
+                Properties.Resources.green;
         }
     }
 
@@ -52,13 +54,16 @@ public partial class Form1 : Form, IMessageListener1
 
     private void BogusButton_Click(object sender, EventArgs e)
     {
-        Broadcaster().Broadcast(BogusOperations.People().FirstOrDefault()!, this);
+        Broadcaster()
+            .Broadcast(BogusOperations.People()
+                .FirstOrDefault()!, this);
         
     }
 
     private void numericUpDown1_ValueChanged(object sender, EventArgs e)
     {
-        Broadcaster().Broadcast((int)numericUpDown1.Value, this);
+        Broadcaster()
+            .Broadcast((int)numericUpDown1.Value, this);
     }
 
     private void Form1_Closing(object sender, CancelEventArgs e)
